@@ -1,0 +1,14 @@
+{
+    "Email": "Email",
+    "Password": "Senha",
+    "Remember me": "Lembrar-me",
+    "Login": "Entrar",
+    "Forgot your password?": "Esqueceu a senha?",
+    "Forgot Password": "Esqueceu a senha",
+    "Send Password Reset Link": "Enviar link de redefinição de senha",
+    "Back to Login": "Voltar para o login",
+    "The provided credentials are incorrect": "As credenciais fornecidas estão incorretas",
+    "We have emailed your password reset link": "Enviamos por email seu link de redefinição de senha",
+    "It was not possible to send the email. Try again": "Não foi possível enviar o email. Tente novamente"
+}
+    
