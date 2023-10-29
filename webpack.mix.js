@@ -12,6 +12,8 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/validations/form-login.js', 'public/js/validations')
+    .js('resources/js/validations/form-forgot-password.js', 'public/js/validations')
     .postCss('resources/css/app.css', 'public/css', [
-        //
+        require("tailwindcss"),
     ]);
