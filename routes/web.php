@@ -20,8 +20,8 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/', function () {
-        return view('dashboard');
-    })->name('dashboard');
+        return view('home');
+    })->name('home');
 
     Route::middleware(['admin.access'])
         ->prefix('user-management')
