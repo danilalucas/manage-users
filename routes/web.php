@@ -23,7 +23,11 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::prefix('user-management')->controller(UserManagementController::class)->name('user-management.')->group(function () {
+    Route::middleware(['admin.access'])
+        ->prefix('user-management')
+        ->controller(UserManagementController::class)
+        ->name('user-management.')
+        ->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/create', 'create')->name('create');
         Route::post('/store', 'store')->name('store');

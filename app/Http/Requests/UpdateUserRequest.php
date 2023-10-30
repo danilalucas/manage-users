@@ -27,6 +27,7 @@ class UpdateUserRequest extends FormRequest
             'name'             => 'required|max:255|unique:users,name,'.$userId,
             'email'            => 'required|max:255|email|unique:users,email,'.$userId,
             'password'         => 'nullable|min:8|confirmed',
+            'role'             => 'required',
         ];
     }
 
@@ -47,7 +48,8 @@ class UpdateUserRequest extends FormRequest
             'email.email'        => __('The email provided is not valid'),
             'password.required'  => __('The password field is mandatory'),
             'password.min'       => __('Minimum quantity of 8 characters'),
-            'password.confirmed' => __('Password confirmation does not match'),       
+            'password.confirmed' => __('Password confirmation does not match'),
+            'role.required'      => __('The user access field is required'),       
         ];
     }
 

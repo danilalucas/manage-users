@@ -12,20 +12,22 @@
             <li class="nav-item {{ request()->routeIs('profile.show') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('profile.show') }}"> {{ __('Profile') }} </a>
             </li>
-            <li class="nav-item dropdown {{ request()->routeIs('user-management.index', 'user-management.create') ? 'active' : '' }}">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{ __('User Management') }}
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('user-management.index') }}">
-                        {{ __('List Users') }}
+            @if (auth()->user()->hasRole('admin'))        
+                <li class="nav-item dropdown {{ request()->routeIs('user-management.index', 'user-management.create') ? 'active' : '' }}">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ __('User Management') }}
                     </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{ route('user-management.create') }}">
-                        {{ __('Add New User') }}
-                    </a>
-                </div>
-            </li>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('user-management.index') }}">
+                            {{ __('List Users') }}
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{ route('user-management.create') }}">
+                            {{ __('Add New User') }}
+                        </a>
+                    </div>
+                </li>
+            @endif
         </ul>
         
         <form class="form-inline my-2 my-lg-0" action="{{ route('logout') }}" method="POST">

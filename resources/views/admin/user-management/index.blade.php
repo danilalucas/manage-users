@@ -77,16 +77,17 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th style="width: 1%;"> {{ __('Id') }} </th>
-                                <th style="width: 30%;"> {{ __('Name') }} </th>
-                                <th style="width: 50%;"> {{ __('Email') }} </th>
-                                <th style="min-width: 175px;"> </th>
+                                <th style="width: calc(10% - 150px);"> {{ __('Id') }} </th>
+                                <th style="width: calc(25% - 150px);"> {{ __('Name') }} </th>
+                                <th style="width: calc(45% - 150px);"> {{ __('Email') }} </th>
+                                <th style="width: calc(20% - 150px);"> {{ __('User Access') }} </th>
+                                <th style="min-width: 150px;"> </th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($users as $user)
                                 <tr>
-                                    <td class="text-break align-middle">
+                                    <td class="align-middle">
                                         {{ $user->id ?? "" }}
                                     </td>
                                     <td class="text-break align-middle">
@@ -94,6 +95,11 @@
                                     </td>
                                     <td class="text-break align-middle">
                                         {{ $user->email ?? "" }}
+                                    </td>
+                                    <td class="align-middle">
+                                        @foreach ($user->roles as $role)
+                                            {{ __($role->name ?? "") }}
+                                        @endforeach
                                     </td>
                                     <td class="project-actions text-right text-break align-middle">
                                         <a class="btn btn-primary btn-sm" href="{{ route('user-management.edit', ['id' => $user->id]); }}">

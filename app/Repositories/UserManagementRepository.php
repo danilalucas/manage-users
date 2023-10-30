@@ -47,7 +47,9 @@ class UserManagementRepository{
             $user->password = Hash::make($data['password']);
         }
 
-        $user->save();
+        if($user->save()) {
+            $user->roles()->sync($data['role']);
+        }
 
         return $user;
     }
@@ -60,7 +62,11 @@ class UserManagementRepository{
 
     public function store($data)
     {
-        return $this->user->create($data);
+        $user = $this->user->create($data);
+
+        $user->roles()->sync($data['role']);
+
+        return $user;
     }
 
 }

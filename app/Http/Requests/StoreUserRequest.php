@@ -25,6 +25,7 @@ class StoreUserRequest extends FormRequest
             'name'             => 'required|max:255|unique:users',
             'email'            => 'required|max:255|unique:users|email',
             'password'         => 'required|min:8|confirmed',
+            'role'             => 'required',
         ];
     }
 
@@ -46,6 +47,7 @@ class StoreUserRequest extends FormRequest
             'password.required'  => __('The password field is mandatory'),
             'password.min'       => __('Minimum quantity of 8 characters'),
             'password.confirmed' => __('Password confirmation does not match'),
+            'role.required'      => __('The user access field is required'),
         ];
     }
 
