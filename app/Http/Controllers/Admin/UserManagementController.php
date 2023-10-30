@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateUserRequest;
 use App\Services\UserManagementService;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
+use App\Notifications\NewUser;
 
 class UserManagementController extends Controller
 {
@@ -48,9 +49,11 @@ class UserManagementController extends Controller
     public function store(StoreUserRequest $request)
     {
         try{
+            $userPassword = $request->password;
             $request->merge(['password' => Hash::make($request->password)]);
             $data = $request->only('name', 'email', 'password');
             $user = $this->userManagementService->store($data);
+            $user->notify(new NewUser($userPassword));
 
             return redirect()
                     ->route('user-management.index')
