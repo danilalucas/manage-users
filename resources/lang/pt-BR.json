@@ -32,13 +32,17 @@
     "Create new user": "Criar novo usuário",
     "The name field is required": "O campo nome é obrigatório",
     "Exceeded the 255 character limit": "Excedeu o limite de 255 caracteres",
-    "Username already exists": "Nome de usuario já existe",
+    "Username already exists": "Nome de usuário já existe",
     "The email field is mandatory": "O campo email é obrigatório",
-    "User email already exists": "Email do usuario já existe",
+    "User email already exists": "Email do usuário já existe",
     "The email provided is not valid": "O email informado não é válido",
     "The password field is mandatory": "O campo senha é obrigatório",
     "Minimum quantity of 8 characters": "Quantidade mínina de 8 caracteres",
     "Password confirmation does not match": "A confirmação da senha não corresponde",
-    "Logout": "Sair"
+    "Logout": "Sair",
+    "User Access": "Acesso do usuário",
+    "admin": "Administrador",
+    "common": "Padrão",
+    "The user access field is required": "O campo acesso do usuário é obrigatório"
 }
     

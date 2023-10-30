@@ -54,6 +54,29 @@
     @enderror
 </div>
 
+<div class="mb-3">
+    <label for="role" class="form-label">{{ __('User Access') }} <span class="text-danger">*</span> </label>
+    <select class="@error('role') is-invalid @enderror form-control" aria-label="acesso" name="role">
+        <option value="">Selecione o acesso</option>
+        @if(isset($roles))
+            @foreach($roles as $role)
+                <option value="{{ $role->id }}" 
+                    @if(old('role', isset($user) && $user->hasRole($role->name) ? $role->id : null ) == $role->id) selected @endif>
+                    {{ __($role->name) }}
+                </option>
+            @endforeach
+        @endif
+    </select>
+    @error('role')
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ $message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @enderror
+</div>
+
 @push('script_bottom')
     <script src="{{ mix('js/validations/form-user.js') }}"></script>
 @endpush

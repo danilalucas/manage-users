@@ -10,14 +10,20 @@ use App\Services\UserManagementService;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
 use App\Notifications\NewUser;
+use App\Services\RoleService;
 
 class UserManagementController extends Controller
 {
     private $userManagementService;
+    private $roleService;
 
-    public function __construct(UserManagementService $userManagementService)
+    public function __construct(
+        UserManagementService $userManagementService,
+        RoleService $roleService
+    )
     {
         $this->userManagementService = $userManagementService;
+        $this->roleService = $roleService;
     }
     /**
      * Display a listing of the resource.
@@ -40,7 +46,9 @@ class UserManagementController extends Controller
      */
     public function create()
     {
-        return view("admin.user-management.create");
+        $roles = $this->roleService->all();
+
+        return view("admin.user-management.create", compact('roles'));
     }
 
     /**
@@ -51,7 +59,7 @@ class UserManagementController extends Controller
         try{
             $userPassword = $request->password;
             $request->merge(['password' => Hash::make($request->password)]);
-            $data = $request->only('name', 'email', 'password');
+            $data = $request->only('name', 'email', 'password', 'role');
             $user = $this->userManagementService->store($data);
             $user->notify(new NewUser($userPassword));
 
@@ -73,8 +81,9 @@ class UserManagementController extends Controller
     public function edit(string $id)
     {
         $user = $this->userManagementService->getById($id);
+        $roles = $this->roleService->all();
 
-        return view("admin.user-management.edit", compact('user'));
+        return view("admin.user-management.edit", compact('user', 'roles'));
     }
 
     /**
@@ -83,7 +92,7 @@ class UserManagementController extends Controller
     public function update(UpdateUserRequest $request, string $id)
     {
         try{
-            $data = $request->only('name', 'email', 'password');
+            $data = $request->only('name', 'email', 'password', 'role');
             $update = $this->userManagementService->update($id, $data);
 
             return redirect()
