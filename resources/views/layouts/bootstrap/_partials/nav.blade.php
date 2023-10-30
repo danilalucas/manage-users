@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
 
-    <a class="navbar-brand" href="{{ route('dashboard') }}">{{ config('app.name') }}</a>
+    <a class="navbar-brand" href="{{ route('home') }}">{{ config('app.name') }}</a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -9,8 +9,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item {{ request()->routeIs('profile.show') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('profile.show') }}"> {{ __('Profile') }} </a>
+            <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('home') }}"> {{ __('Home') }} </a>
             </li>
             @if (auth()->user()->hasRole('admin'))        
                 <li class="nav-item dropdown {{ request()->routeIs('user-management.index', 'user-management.create') ? 'active' : '' }}">
