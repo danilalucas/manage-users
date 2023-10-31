@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserManagementController;
+use App\Http\Controllers\FcmController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,9 @@ Route::middleware([
     Route::get('/', function () {
         return view('home');
     })->name('home');
+
+    Route::post('/fcm/user/register', [FcmController::class, 'register'])
+        ->name('fcm.user.register');
 
     Route::middleware(['admin.access'])
         ->prefix('user-management')
