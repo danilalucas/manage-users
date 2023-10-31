@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
 use App\Notifications\NewUser;
 use App\Services\RoleService;
+use App\Notifications\UpdateUser;
 
 class UserManagementController extends Controller
 {
@@ -93,7 +94,11 @@ class UserManagementController extends Controller
     {
         try{
             $data = $request->only('name', 'email', 'password', 'role');
-            $update = $this->userManagementService->update($id, $data);
+            $user = $this->userManagementService->update($id, $data);
+            
+            if ($user->id !== auth()->user()->id) {
+                $user->notify(new UpdateUser($user));
+            }
 
             return redirect()
                     ->route('user-management.edit', $id)
