@@ -28,5 +28,12 @@
                 </div>
             </div>
         </div>
+        <div id="toast-place"></div>
     </div>
+
 @endsection
+
+@push('script_bottom')>
+    <script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
+    <script src="{{ mix('js/firebase-messaging.js') }}"></script>
+@endpush

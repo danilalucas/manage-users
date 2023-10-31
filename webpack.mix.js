@@ -15,7 +15,9 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/validations/form-login.js', 'public/js/validations')
     .js('resources/js/validations/form-forgot-password.js', 'public/js/validations')
     .js('resources/js/validations/form-user.js', 'public/js/validations')
+    .js('resources/js/firebase-messaging.js', 'public/js')
     .css('resources/css/custom.css', 'public/css')
     .postCss('resources/css/app.css', 'public/css', [
         require("tailwindcss"),
-    ]);
+    ])
+    .version();
