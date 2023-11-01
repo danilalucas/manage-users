@@ -1,66 +1,168 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h2 align="center">
+	Manage Users ☑️
+</h2>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <a href="#-sobre-o-projeto">Sobre</a> •
+    <a href="#-firebase">Firebase</a> •
+    <a href="#-layout">Layout</a> • 
+    <a href="#-como-executar-o-projeto">Como executar</a> • 
+    <a href="#-tecnologias">Tecnologias</a> •  
+    <a href="#-autor">Autor</a>
 </p>
 
-## About Laravel
+## 💻 Sobre o projeto
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+O Manage Users é um sistema de gerenciamento de usuários que oferece funcionalidades para criação, edição e visualização de usuários com diferentes níveis de acesso. Os principais recursos incluem notificações por e-mail e notificações push em tempo real.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🔥 Firebase
 
-## Learning Laravel
+O projeto utiliza o Firebase para recursos como notificações push em tempo real. A seguir estão os passos para configurar o Firebase em seu ambiente de desenvolvimento.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### ⏳ Pré-requisitos
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Antes de começar, é necessário ter algumas informações e ferramentas em mãos:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Conta do Google (para acessar o [Firebase Console](https://console.firebase.google.com/)).
+- [Node.js](https://nodejs.org/) e [npm](https://www.npmjs.com/) instalados em sua máquina.
 
-## Laravel Sponsors
+### ⚙️ Configuração do Firebase
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Siga esses passos para configurar o Firebase no seu projeto:
 
-### Premium Partners
+1. **Acesse o Firebase Console:**
+    - Vá para o [Firebase Console](https://console.firebase.google.com/).
+   - Faça login com sua conta do Google.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+2. **Crie um Projeto:**
+   - Crie um novo projeto no Firebase Console e dê a ele um nome relevante para o seu aplicativo.
 
-## Contributing
+3. **Configure o Aplicativo da Web:**
+   - No painel do projeto, clique na opção "Adicionar aplicativo da web".
+   - Siga as instruções para configurar o aplicativo da web. Isso incluirá a geração de um arquivo de configuração que contém informações importantes, como a chave da Web.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. **Obtenha o Arquivo JSON da Conta de Serviço:**
+   - Você precisar acessar a seção "Configurações do projeto" no Firebase Console e baixar o arquivo JSON da Conta de Serviço.
 
-## Code of Conduct
+5. **Armazene as Credenciais:**
+   - Mantenha o arquivo JSON da Conta de Serviço e a chave da Web seguros e armazenados no diretório storage/app.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 🎨 Layout
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+O layout foi desenvolvido com base no Bootstrap, proporcionando uma interface amigável e responsiva.
+ 
+<p>
+    <a href="https://getbootstrap.com/docs/4.6/getting-started/introduction/">
+        <img src="https://img.shields.io/badge/Acessar Documentação-Bootstrap-%2304D361">
+    </a>
+</p> 
 
-## License
+<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
+    <img alt="Login" title="#layout" src="./storage/screenshots/login.png" width="800px">
+</p>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
+    <img alt="Forgot Password" title="#layout" src="./storage/screenshots/forgot_password.png" width="800px">
+</p>
+
+<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
+    <img alt="Index" title="#layout" src="./storage/screenshots/index.png" width="800px">
+</p>
+
+<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
+    <img alt="Users" title="#layout" src="./storage/screenshots/users.png" width="800px">
+</p>
+
+<h4 align="center"> 
+    📂 Manage Users 📂
+</h4>
+
+---
+
+## 📌 Como executar o projeto
+
+#### ⏳ Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Laragon](https://laragon.org/) com nginx, mysql e php 8. Além disto é bom ter um editor para trabalhar com o código como o [VSCode](https://code.visualstudio.com/)
+
+
+#### 🧭 Baixando o projeto
+
+```bash
+# Clone este repositório
+$ git clone git@github.com:danilalucas/manage-users.git
+```
+#### ⚙️ Configurando o projeto
+
+```bash
+# Acessar diretório
+$ cd manage-users
+# Instalar pacotes
+$ composer install --dev
+# Copiar env
+$ cp .env.example .env
+# No VSCode acessar .env e configurar conexão do banco
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=laravel
+    DB_USERNAME=root
+    DB_PASSWORD=
+# No arquivo .env configure os dados de acesso do primeiro usuário admin
+    ADMIN_NAME=
+    ADMIN_EMAIL=
+    ADMIN_PASSWORD=
+# No arquivo .env configure as credenciais do firebase
+    FIREBASE_DATABASE_URL=
+    FIREBASE_CREDENTIALS=
+# Execute as migrações do banco de dados
+$ php artisan migrate
+# Execute as seeders do banco de dados
+$ php artisan db:seed
+# Inicie o servidor Laravel Mix para compilação de recursos
+$ npm run dev
+# Se desejar que o Laravel continue a observar os arquivos e recompilar automaticamente quando houver alterações
+$ npm run watch
+# Após compilar os recursos, você pode acessar o projeto via navegador usando a url disponibilizada pelo laragon
+```
+---
+
+## 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+-   **[PHP](https://www.php.net/)**
+-   **[Laravel](https://laravel.com/)**
+-   **[Laravel Mix](https://laravel-mix.com/)**
+-   **[Laravel Firebase](https://github.com/kreait/laravel-firebase)**
+-   **[Laravel Notification Channels - fcm](https://github.com/laravel-notification-channels/fcm)**
+-   **[Firebase](https://firebase.google.com/docs/cloud-messaging?hl=pt-br)**
+-   **[Bootstrap](https://getbootstrap.com/)**
+-   **[JavaScript Vanilla](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)**
+-   **[Laragon](https://laragon.org/)**
+-   **[MySQL](https://www.mysql.com/)**
+-   **[Nginx](https://www.nginx.com/)**
+
+---
+
+## 👩🏻‍💻 Autor
+
+<p>
+    <a href="https://github.com/danilalucas">
+        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/80535640?v=4" width="100px;" alt=""/>
+        <br />
+        <sub><b>Daníla Lucas</b></sub>
+    </a>
+</p>
+
+[![Linkedin Badge](https://img.shields.io/badge/-Danila%20Lucas-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/danila-lucas/)](https://www.linkedin.com/in/danila-lucas/)
+[![Gmail Badge](https://img.shields.io/badge/-danilatlucas@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:danilatlucas@gmail.com)](mailto:danilatlucas@gmail.com)
+
+Feito com ❤️ por Daníla Lucas 👋🏽 [Entre em contato!](https://www.linkedin.com/in/danila-lucas/)
+
+---
