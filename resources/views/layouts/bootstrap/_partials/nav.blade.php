@@ -29,13 +29,20 @@
                 </li>
             @endif
         </ul>
-        
-        <form class="form-inline my-2 my-lg-0" action="{{ route('logout') }}" method="POST">
-            @csrf
-            <button class="btn btn-info my-2 my-sm-0 rounded-pill" type="submit">
-                {{ __('Logout') }}
+
+        <div class="dropdown">
+            <button class="btn btn-sm btn-light rounded-pill dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                {{ auth()->user()->name }}
             </button>
-        </form>
+            <div class="dropdown-menu dropdown-menu-lg-right">
+                <a class="dropdown-item" href="javascript:document.getElementById('form_logout').submit();">
+                    <form class="form-inline" action="{{ route('logout') }}" method="POST" id="form_logout">
+                        @csrf
+                            {{ __('Logout') }}
+                    </form>
+                </a>
+            </div>
+        </div>
 
     </div>
 
