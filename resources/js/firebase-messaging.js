@@ -1,7 +1,7 @@
 function showToast(message) {
     const toastElement = $(`
         <div class="toast" style="position: absolute; top: 56px; right: 0;" data-autohide= false>
-            <div class="toast-header">
+            <div class="toast-header bg-light">
                 <i class="fa-solid fa-bell mr-2" style="color: #f9c23c;"></i>                        
                 <strong class="mr-auto">Notificação</strong>
                 <small>Agora</small>
@@ -9,7 +9,7 @@ function showToast(message) {
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="toast-body">
+            <div class="toast-body bg-light">
                 ${message}
             </div>
         </div>
